@@ -1,0 +1,133 @@
+# я усвоил ГитКРакен,просто не успел быстро все сформулировать из-за своей основной работы,по возможности постараюсь успевать 
+#задание 1
+
+duration = int(input('введите число для перевода во временной формат '))
+
+hours = duration // 3600
+
+
+
+print('Duration = ', duration)
+
+# секунды
+
+if duration < 60:
+
+    print(duration, ' сек')
+
+# минуты и секунды
+
+elif 60 <= duration < 3600:
+
+    print(duration // 60, ' мин', duration % 60, ' сек')
+
+# часы, минуты и секунды
+
+elif 3600 <= duration < 86400:
+
+    print(hours, ' час', (duration - hours * 3600) // 60, ' мин', (duration - hours * 3600) % 60, ' сек')
+
+
+
+
+# 2. Создать список, состоящий из кубов нечётных чисел от 1 до 1000:
+
+
+
+my_list = []
+
+
+
+for number in range(1, 1000):
+
+    if number % 2:
+
+        my_list.append(number ** 3)
+
+print(my_list)
+
+
+
+
+
+# a. Вычислить сумму тех чисел из этого списка, сумма цифр которых делится нацело на 7.
+
+# Например, число «19 ^ 3 = 6859» будем включать в сумму, так как 6 + 8 + 5 + 9 = 28 –
+
+# делится нацело на 7. Внимание: использовать только арифметические операции!
+
+
+
+sum_numbers = 0
+
+
+
+for number in my_list:
+
+    sum_digits = 0
+
+    temp_number = number
+
+    while temp_number > 0:
+
+        sum_digits += temp_number % 10
+
+        temp_number //= 10
+
+    if not sum_digits % 7:
+
+        sum_numbers += number
+
+print(sum_numbers)
+
+
+
+# b. К каждому элементу списка добавить 17 и заново вычислить сумму тех чисел из этого
+
+# списка, сумма цифр которых делится нацело на 7.
+
+# c. * Решить задачу под пунктом b, не создавая новый список.
+
+
+
+sum_numbers = 0
+
+
+
+for number in my_list:
+
+    sum_digits = 0
+
+    temp_number = number + 17
+
+    while temp_number > 0:
+
+        sum_digits += temp_number % 10
+
+        temp_number //= 10
+
+    if not sum_digits % 7:
+
+        sum_numbers += number + 17
+
+print(sum_numbers)
+
+
+#задание 3
+
+for i in range(1, 21):
+
+    # print(i)
+
+    if i == 1:
+
+        print(f'{i} процент')
+
+    elif i >= 2 and i <= 4:
+
+        print(f'{i} процента')
+
+    elif i >= 5 and i <= 20:
+
+        print(f'{i} процентов')
+
