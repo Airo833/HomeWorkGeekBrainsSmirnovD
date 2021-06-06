@@ -1,0 +1,56 @@
+#задание 1
+
+#a = 15 * 3
+#print(type(a))
+#<class 'int'>
+#b = 15 / 3
+#print(type(b))
+#<class 'float'>
+#c = 15 // 2
+#print(type(c))
+#<class 'int'>
+#d = 15 ** 2
+#print(type(d))
+#<class 'int'>
+
+#задание 2
+
+#Дан список: ['в', '5', 'часов', '17', 'минут', 'температура', 'воздуха', 'была', '+5', 'градусов']
+
+weather = ['в', '5', 'часов', '17', 'минут', 'температура', 'воздуха', 'была', '+5', 'градусов']
+
+#Необходимо его обработать — обособить каждое целое число кавычками и дополнить нулём до двух разрядов:
+my_weather = []
+for elem in weather:
+    if elem.isdigit():
+        my_weather.extend(['"', f'{int(elem):02}', '"'])
+    elif (elem.startswith('+') or elem.startswith('-')) and elem[1:].isdigit():
+        my_weather.extend(['"', f'{elem[0]}{int(elem):}', '"'])
+    else:
+        my_weather.append(elem)
+
+out_info = ' '.join(my_weather)
+print(out_info)
+
+#задание 4
+
+jobs = ['инженер-конструктор Игорь', 'главный бухгалтер МАРИНА', 'токарь высшего разряда нИКОЛАй', 'директор аэлита']
+for position in jobs:
+    print('Привет', position.split()[-1].title())
+
+#задание5
+
+prices = [63.3, 94.44, 44.3, 8.33, 33.8, 1, 14.77, 15, 16.04]
+for price in prices:
+    rub = int(price)
+    kk = (price - int(price)) * 100
+    print(f'{rub} руб {kk:02.0f} коп')
+
+prices = [63.3, 94.44, 44.3, 8.33, 33.8, 1, 14.77, 15, 16.04]
+print(id(prices))
+prices.sort()
+print(id(prices))
+for price in prices:
+    rub = int(price)
+    kk = (price - int(price)) * 100
+    print(f'{rub} руб {kk:02.0f} коп')
